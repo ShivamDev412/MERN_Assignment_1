@@ -22,7 +22,7 @@ exports.addEmployee = {
     args: {
         firstName: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         lastName: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
-        age: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLInt) },
+        age: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         email: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         dateOfJoining: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         title: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
@@ -71,7 +71,7 @@ exports.updateEmployee = {
         id: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         firstName: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         lastName: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
-        age: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLInt) },
+        age: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         email: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         dateOfJoining: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
         title: { type: new graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },

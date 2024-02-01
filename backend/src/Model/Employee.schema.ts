@@ -9,7 +9,7 @@ export interface EmployeeT extends Document {
   firstName: string;
   lastName: string;
   email: string;
-  age: number;
+  age: string;
   dateOfJoining: Date;
   title: Title;
   department: Department;
@@ -28,7 +28,7 @@ const EmployeeSchema = new Schema<EmployeeT>(
       required: true,
     },
     age: {
-      type: Number,
+      type: String,
       required: true,
     },
     email: {

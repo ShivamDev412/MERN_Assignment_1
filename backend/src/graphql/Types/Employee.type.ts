@@ -7,7 +7,7 @@ export const EmployeeType = new GraphQLObjectType({
       id: { type: GraphQLID },
       firstName: { type: GraphQLString },
       lastName: { type: GraphQLString },
-      age: { type: GraphQLInt },
+      age: { type: GraphQLString },
       email: { type: GraphQLString },
       dateOfJoining: { type: GraphQLString },
       title: { type: GraphQLString },

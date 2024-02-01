@@ -8,7 +8,7 @@ export const addEmployee = {
   args: {
     firstName: { type: new GraphQLNonNull(GraphQLString) },
     lastName: { type: new GraphQLNonNull(GraphQLString) },
-    age: { type: new GraphQLNonNull(GraphQLInt) },
+    age: { type: new GraphQLNonNull(GraphQLString) },
     email: { type: new GraphQLNonNull(GraphQLString) },
     dateOfJoining: { type: new GraphQLNonNull(GraphQLString) },
     title: { type: new GraphQLNonNull(GraphQLString) },
@@ -57,7 +57,7 @@ export const updateEmployee = {
     id: { type: new GraphQLNonNull(GraphQLString) },
     firstName: { type: new GraphQLNonNull(GraphQLString) },
     lastName: { type: new GraphQLNonNull(GraphQLString) },
-    age: { type: new GraphQLNonNull(GraphQLInt) },
+    age: { type: new GraphQLNonNull(GraphQLString) },
     email: { type: new GraphQLNonNull(GraphQLString) },
     dateOfJoining: { type: new GraphQLNonNull(GraphQLString) },
     title: { type: new GraphQLNonNull(GraphQLString) },

@@ -9,7 +9,7 @@ exports.EmployeeType = new graphql_1.GraphQLObjectType({
             id: { type: graphql_1.GraphQLID },
             firstName: { type: graphql_1.GraphQLString },
             lastName: { type: graphql_1.GraphQLString },
-            age: { type: graphql_1.GraphQLInt },
+            age: { type: graphql_1.GraphQLString },
             email: { type: graphql_1.GraphQLString },
             dateOfJoining: { type: graphql_1.GraphQLString },
             title: { type: graphql_1.GraphQLString },

@@ -34,7 +34,7 @@ const EmployeeSchema = new mongoose_1.Schema({
         required: true,
     },
     age: {
-        type: Number,
+        type: String,
         required: true,
     },
     email: {
