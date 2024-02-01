@@ -23,7 +23,7 @@ const UPDATE_EMPLOYEE = gql`
     $email: String!
     $dateOfJoining: String!
     $title: String!
-    $age: Int!
+    $age: String!
     $department: String!
     $employeeType: String!
     $currentStatus: Int!
@@ -60,7 +60,7 @@ const CREATE_EMPLOYEE = gql`
     $email: String!
     $dateOfJoining: String!
     $title: String!
-    $age: Int!
+    $age: String!
     $department: String!
     $employeeType: String!
     # $currentStatus: Int!

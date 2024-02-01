@@ -77,7 +77,7 @@ export const EmployeeCreateOrUpdate: FC<EmployeeCreateProps> = ({
           email,
           dateOfJoining,
           title,
-          age: +age,
+          age,
           department,
           employeeType,
           currentStatus: employeeInitialState.currentStatus,

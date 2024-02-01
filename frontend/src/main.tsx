@@ -8,7 +8,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import { __DEV__ } from "@apollo/client/utilities/globals";
 const client = new ApolloClient({
-  uri: "http://localhost:4004/graphql",
+  // uri: "http://localhost:4004/graphql",
+  uri: "https://myadmin-20gl.onrender.com/graphql",
   cache: new InMemoryCache({
     addTypename: false,
   }),
