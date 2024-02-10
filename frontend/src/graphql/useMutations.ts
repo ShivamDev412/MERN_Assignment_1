@@ -5,8 +5,9 @@ import { Employee } from "../Types/Employee";
 import { employeeInitialState } from "../utils/Constant";
 import { useAtom } from "jotai";
 import { query } from "../store";
+import Toast from "../utils/toastMessage";
 
-export const useAddEmployee = () => {
+export const useAddEmployee = (handleCloseModal: Function) => {
   const [variables] = useAtom(query);
   const [addEmployee] = useMutation(CREATE_EMPLOYEE, {
     variables: employeeInitialState,
@@ -24,12 +25,14 @@ export const useAddEmployee = () => {
           data: { employees: { data: employees?.data.concat([addEmployee]) } },
           variables,
         });
+        handleCloseModal();
+        Toast("Employee added successfully", "success");
       } catch (error) {
         console.error("Error updating cache:", error);
       }
     },
     onError: (error) => {
-      console.error("Mutation error:", error.message);
+      Toast(error.message, "error");
     },
   });
 
@@ -38,7 +41,7 @@ export const useAddEmployee = () => {
   };
 };
 
-export const useEditEmployee = () => {
+export const useEditEmployee = (handleCloseModal: Function) => {
   const [variables] = useAtom(query);
   const [updateEmployee] = useMutation(UPDATE_EMPLOYEE, {
     variables: employeeInitialState,
@@ -62,12 +65,14 @@ export const useEditEmployee = () => {
           },
           variables,
         });
+        handleCloseModal();
+        Toast("Employee updated successfully", "success");
       } catch (error) {
         console.error("Error updating cache:", error);
       }
     },
     onError: (error) => {
-      console.error("Mutation error:", error.message);
+      Toast(error.message, "error");
     },
   });
 
@@ -84,6 +89,10 @@ export const useDeleteEmployee = (id: string | undefined) => {
     refetchQueries: [{ query: GET_EMPLOYEES, variables }],
     onCompleted() {
       apolloClient.resetStore();
+      Toast("Employee deleted successfully", "success");
+    },
+    onError: (error) => {
+      Toast(error.message, "error");
     },
   });
 

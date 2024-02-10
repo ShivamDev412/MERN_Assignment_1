@@ -21,40 +21,40 @@ const EmployeeSchema = new Schema<EmployeeT>(
   {
     firstName: {
       type: String,
-      required: true,
+      required: [true, "First name is required"],
     },
     lastName: {
       type: String,
-      required: true,
+      required: [true, "Last name is required"],
     },
     age: {
       type: String,
-      required: true,
+      required: [true, "Age is required"],
     },
     email: {
       type: String,
-      required: true,
+      required: [true, "Email is required"],
       unique: true,
     },
     dateOfJoining: {
       type: Date,
-      required: true,
+      required: [true, "Date of joining is required"],
     },
     title: {
       type: String,
-      required: true,
+      required: [true, "Title is required"],
     },
     department: {
       type: String,
-      required: true,
+      required: [true, "Department is required"],
     },
     employeeType: {
       type: String,
-      required: true,
+      required: [true, "Employee type is required"],
     },
     currentStatus: {
       type: Number,
-      required: true,
+      required: [true, "Current status is required"],
       default: 1,
     },
   },

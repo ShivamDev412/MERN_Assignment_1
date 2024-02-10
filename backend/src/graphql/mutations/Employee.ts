@@ -10,7 +10,7 @@ export const addEmployee = {
     lastName: { type: new GraphQLNonNull(GraphQLString) },
     age: { type: new GraphQLNonNull(GraphQLString) },
     email: { type: new GraphQLNonNull(GraphQLString) },
-    dateOfJoining: { type: new GraphQLNonNull(GraphQLString) },
+    dateOfJoining: { type: new GraphQLNonNull(GraphQLString) }, // Assuming dateOfJoining is a string in ISO format
     title: { type: new GraphQLNonNull(GraphQLString) },
     department: { type: new GraphQLNonNull(GraphQLString) },
     employeeType: { type: new GraphQLNonNull(GraphQLString) },
@@ -19,19 +19,15 @@ export const addEmployee = {
   resolve: async (_parent: any, args: EmployeeT) => {
     try {
       employeeValidationSchema.parse(args);
+
       const existingEmployee = await Employee.findOne({ email: args.email });
       if (existingEmployee) {
-        return {
-          employee: null,
-          error: "Employee with this email already exists",
-        };
+        throw new Error("Employee with this email already exists");
       }
       const savedEmployee = await Employee.create(args);
       return savedEmployee;
     } catch (error: any) {
-      console.log(error);
-      const errorMessage = error.errors.map((err: any) => err.message).join(", ");
-      return { employee: null, error: errorMessage };
+      throw error;
     }
   },
 };
@@ -46,7 +42,7 @@ export const deleteEmployee = {
       const deletedEmployee = await Employee.findByIdAndDelete(args.id);
       return deletedEmployee;
     } catch (error: any) {
-      return { employee: null, error: error.message };
+      return error;
     }
   },
 };
@@ -72,7 +68,7 @@ export const updateEmployee = {
       });
       return updatedEmployee;
     } catch (error: any) {
-      return { employee: null, error: error.message };
+      return error;
     }
   },
 };

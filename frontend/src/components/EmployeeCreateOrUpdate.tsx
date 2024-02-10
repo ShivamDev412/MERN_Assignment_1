@@ -52,8 +52,8 @@ export const EmployeeCreateOrUpdate: FC<EmployeeCreateProps> = ({
     });
     setShowDropdown(false);
   };
-  const { addEmployee } = useAddEmployee();
-  const { updateEmployee } = useEditEmployee();
+  const { addEmployee } = useAddEmployee(handleCloseModal);
+  const { updateEmployee } = useEditEmployee(     handleCloseModal);
   const handleEmployee = async (
     data: FormField,
     callback: MutationFunction
@@ -83,8 +83,6 @@ export const EmployeeCreateOrUpdate: FC<EmployeeCreateProps> = ({
           currentStatus: employeeInitialState.currentStatus,
         },
       });
-
-      handleCloseModal();
     } catch (error: any) {
       console.error("Mutation error:", error.message);
     }
