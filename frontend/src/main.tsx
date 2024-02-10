@@ -9,8 +9,8 @@ import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import { ToastContainer } from "react-toastify";
 import { __DEV__ } from "@apollo/client/utilities/globals";
 const client = new ApolloClient({
-  uri: "http://localhost:4004/graphql",
-  // uri: "https://myadmin-20gl.onrender.com/graphql",
+  // uri: "http://localhost:4004/graphql",
+  uri: "https://myadmin-20gl.onrender.com/graphql",
   cache: new InMemoryCache({
     addTypename: false,
   }),
